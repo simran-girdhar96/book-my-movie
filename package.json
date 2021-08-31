@@ -7,6 +7,7 @@
     "@material-ui/icons": "^3.0.2",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
+    "react-material-ui-form-validator": "2.1.4",
     "react-modal": "^3.12.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.5",
@@ -19,5 +20,17 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:8085"
+  "proxy": "http://localhost:8085",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
