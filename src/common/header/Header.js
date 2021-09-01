@@ -77,6 +77,8 @@ const Header = function (props) {
         if (rawResponse.ok) {
             window.sessionStorage.setItem('user-details', JSON.stringify(result));
             window.sessionStorage.setItem('access-token', rawResponse.headers.get('access-token'));
+            setusernameRequired("dispNone");
+            setloginPasswordRequired("dispNone");
             setLoggedIn(true);
             closeModalHandler();
 
@@ -127,7 +129,7 @@ const Header = function (props) {
             setfirstnameRequired("dispNone");
             setlastnameRequired("dispNone");
             setemailRequired("dispNone");
-            setloginPasswordRequired("dispNone");
+            setregisterPasswordRequired("dispNone");
             setcontactRequired("dispNone");
 
         } else {

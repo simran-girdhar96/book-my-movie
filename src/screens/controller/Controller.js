@@ -1,5 +1,6 @@
 import React from "react";
 import Home from "../home/Home";
+import Details from "../details/Details";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import BookShow from "../bookshow/BookShow";
 import Confirmation from "../confirmation/Confirmation";
@@ -12,6 +13,10 @@ const Controller = () => {
                     exact
                     path="/"
                     render={(props) => <Home {...props} baseUrl={baseUrl} />}
+                />
+                <Route
+                    path="/movie/:id"
+                    render={(props) => <Details {...props} baseUrl={baseUrl} />}
                 />
                 <Route
                     path="/bookshow/:id"

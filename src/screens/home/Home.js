@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Header from '../../common/header/Header'
-import './home.css'
+import './Home.css'
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
@@ -75,14 +75,14 @@ const Home = function (props) {
     function releaseDateEndHandler(e) {
         setreleaseDateEnd(e.target.value);
     }
-    function filterApplyHandler() {
+     function filterApplyHandler() {
         debugger;
-        let queryString = "?status=RELEASED";
-        if (movieName !== "") {
+        let queryString = "?page=1&limit=10&status=RELEASED";
+        if (movieName !== "" && movieName!= null && movieName.length > 0) {
             queryString += "&title=" + movieName;
         }
         if (genres.length > 0) {
-            queryString += "&genres=" + genres.toString();
+            queryString += "&genre=" + genres.toString();
         }
         if (artists.length > 0) {
             queryString += "&artists=" + artists.toString();
@@ -121,7 +121,7 @@ const Home = function (props) {
                 <div className="left">
                     <GridList cellHeight={350} cols={4} className="gridListMain">
                         {releasedmovies.map(movie => (
-                            <GridListTile onClick={()=>movieClickHandler(movie.id)} className="released-movie-grid-item" key={"grid" + movie.id}>
+                            <GridListTile style={{cursor:"pointer"}} onClick={()=>movieClickHandler(movie.id)} className="released-movie-grid-item" key={"grid" + movie.id}>
                                 <img src={movie.poster_url} className="movie-poster" alt={movie.title} />
                                 <GridListTileBar
                                     title={movie.title}
